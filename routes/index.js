@@ -17,7 +17,7 @@ const opHelper = new OperationHelper({
 var searchIndex =
   /* GET home page. */
   router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Fill Form an Get Results'  })
+    res.render('index', { data: [], title: 'Fill Form an Get Results'  })
   });
 
 router.post('/', urlencodedParser, (req, res) => {
