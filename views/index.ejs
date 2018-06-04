@@ -2,14 +2,20 @@
 <html>
   <head>
     <title>Amazon Product API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body style="padding: 1em">
     <div style="margin: 1em auto; padding: 1em">
-    <form method="POST" action="/">
-      <input type="text" name="title" placeholder="type for search ..." required>
-      <button type="submit"> Get Results </button>
-    </form>
+      <form method="POST" action="/">
+        <select name="searchIndex">
+        <% for(var i=0; i<searchIndexes.length; i++) {%>
+          <option value="<%= searchIndexes[i] %>"><%= searchIndexes[i] %></option>
+        <% } %>
+        </select>
+        <input type="text" name="title" placeholder="type for search ..." required>
+        <button type="submit"> Get Results </button>
+      </form>
     </div>
     <h1><%= title %></h1>
     <% if (data.length>0) { %>
