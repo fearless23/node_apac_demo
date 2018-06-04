@@ -62,8 +62,8 @@ router.post('/', urlencodedParser, (req, res) => {
   }).then((response) => {
     const finalData = response.result.ItemSearchResponse.Items.Item
     const finalTitle = 'Results in Category - ' + req.body.searchIndex + ' Search Term - ' + req.body.title
-    // res.render('index', { title: finalTitle, data: finalData, searchIndexes: searchIndexes })
-    res.send(finalData)
+    res.render('index', { title: finalTitle, data: finalData, searchIndexes: searchIndexes })
+    // res.send(finalData)
   }).catch((err) => {
     console.error("Something went wrong! ", err);
   });
