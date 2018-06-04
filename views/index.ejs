@@ -24,7 +24,7 @@
       <% for(var i=0; i<data.length; i++) {%>
         <li class="card">
         <b><%= data[i].ItemAttributes.Title %></b> <br>
-        Author: <%= data[i].ItemAttributes.Author %> <br>
+        Listed Price: <%= data[i].OfferSummary.LowestNewPrice.FormattedPrice %> <br>
           ASIN: <%= data[i].ASIN %> <br>
           <a class="btn" href="<%= data[i].DetailPageURL %>" > View on Amazon </a> %>
         </li>
