@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Product API</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style="padding: 1em">
+    <div style="margin: 1em auto; padding: 1em">
+    <form method="POST" action="/">
+      <input type="text" name="title" placeholder="type for search ..." required>
+      <button type="submit"> Get Results </button>
+    </form>
+    </div>
+    <h1><%= title %></h1>
+    <% if (data) { %>
+      <h2>Results</h2>
+      <ul class="cards-grid">
+      <% for(var i=0; i<data.length; i++) {%>
+        <li class="card">
+        <b><%= data[i].ItemAttributes.Title %></b> <br>
+        Author: <%= data[i].ItemAttributes.Author %> <br>
+          ASIN: <%= data[i].ASIN %> <br>
+          <a class="btn" href="<%= data[i].DetailPageURL %>" > View on Amazon </a> %>
+        </li>
+      <% } %>
+    <% } %>
+    </ul>
+  </body>
+</html>
+
+<!--
+Sample Response Format
+{
+    ItemSearchResponse: {
+        OperationRequest: [Object],
+        Items: [Object]
+    }
+}
+-->
